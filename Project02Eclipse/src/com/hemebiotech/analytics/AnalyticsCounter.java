@@ -30,9 +30,12 @@ public class AnalyticsCounter {
 
 			line = reader.readLine();	// get another symptom
 		}
+		reader.close();
+		
 		System.out.println("number of headaches: " + headacheCount);
 		System.out.println("number of rash: " + rashCount);
 		System.out.println("number of dialated pupils: " + dialatedpupilCount);
+		
 		// next generate output
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
