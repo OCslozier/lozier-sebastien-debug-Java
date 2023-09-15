@@ -29,7 +29,6 @@ public class AnalyticsCounter {
 		}
 
 		return occurrences;
-
 	}
 
 	public void displayOccurrences(Map<String, Integer> occurrences) {
@@ -41,23 +40,6 @@ public class AnalyticsCounter {
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 
 		writer.writeSymptoms(symptoms);
-
-	}
-
-	public static void main(String args[]) throws Exception {
-
-		String filepath = "Project02Eclipse/symptoms.txt";
-		String outpath = "Project02Eclipse/result.txt";
-
-		ISymptomReader reader = new ReadSymptomDataFromFile(filepath);
-		ISymptomWriter writer = new WriteSymptomDataToFile(outpath);
-		AnalyticsCounter counter = new AnalyticsCounter(reader, writer);
-
-		List<String> symptoms = counter.getSymptoms();
-
-		Map<String, Integer> occurrences = counter.countOccurrences(symptoms);
-		counter.displayOccurrences(occurrences);
-		counter.writeSymptoms(occurrences);
 
 	}
 }
