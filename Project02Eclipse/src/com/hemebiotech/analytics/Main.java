@@ -28,13 +28,13 @@ public class Main {
 		String outpath = "Project02Eclipse/result.txt";
 
 		// Créer une instance de lecture des symptômes à partir du fichier d'entrée
-		ReadSymptomDataFromFile aReader = new ReadSymptomDataFromFile(filepath);
+		ISymptomReader reader = new ReadSymptomDataFromFile(filepath);
 
 		// Créer une instance d'écriture des symptômes pour le fichier de sortie
-		WriteSymptomDataToFile aWriter = new WriteSymptomDataToFile(outpath);
+		ISymptomWriter writer = new WriteSymptomDataToFile(outpath);
 
 		// Créer une instance de AnalyticsCounter qui réalise l'analyse
-		AnalyticsCounter counter = new AnalyticsCounter(aReader, aWriter);
+		AnalyticsCounter counter = new AnalyticsCounter(reader, writer);
 
 		// Récupère la liste des symptômes
 		List<String> symptoms = counter.getSymptoms();
