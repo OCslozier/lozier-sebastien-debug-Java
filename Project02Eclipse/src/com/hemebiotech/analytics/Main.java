@@ -25,7 +25,7 @@ public class Main {
 		String filepath = "Project02Eclipse/symptoms.txt";
 
 		// Chemin vers le fichier de sortie pour l'écriture des résultats
-		String outpath = "Project02Eclipse/result.txt";
+		String outpath = "Project02Eclipse/result.out";
 
 		// Créer une instance de lecture des symptômes à partir du fichier d'entrée
 		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile(filepath);
