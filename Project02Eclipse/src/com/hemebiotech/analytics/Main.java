@@ -28,25 +28,25 @@ public class Main {
 		String outpath = "Project02Eclipse/result.txt";
 
 		// Créer une instance de lecture des symptômes à partir du fichier d'entrée
-		ISymptomReader reader = new ReadSymptomDataFromFile(filepath);
+		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile(filepath);
 
 		// Créer une instance d'écriture des symptômes pour le fichier de sortie
-		ISymptomWriter writer = new WriteSymptomDataToFile(outpath);
+		WriteSymptomDataToFile writer = new WriteSymptomDataToFile(outpath);
 
 		// Créer une instance de AnalyticsCounter qui réalise l'analyse
 		AnalyticsCounter counter = new AnalyticsCounter(reader, writer);
 
 		// Récupère la liste des symptômes
-		List<String> symptoms = counter.getSymptoms();
+		List<String> symptomsList = counter.getSymptoms();
 
 		// Comptabilisation des occurrences des symptômes
-		Map<String, Integer> occurrences = counter.countOccurrences(symptoms);
+		Map<String, Integer> symptomsOccurrences = counter.countOccurrences(symptomsList);
 
 		// Affichage des occurrences des symptômes
-		counter.displayOccurrences(occurrences);
+		counter.displayOccurrences(symptomsOccurrences);
 
 		// Écriture des symptômes et des occurrences dans le fichier de sortie
-		counter.writeSymptoms(occurrences);
+		counter.writeSymptoms(symptomsOccurrences);
 
 	}
 

@@ -18,5 +18,5 @@ public interface ISymptomWriter {
 	 *                    et la valeur associée représente le nombre d'occurrences
 	 *                    de ce symptôme.
 	 */
-	public void writeSymptoms(Map<String, Integer> occurrences);
+	public void writeSymptoms(Map<String, Integer> symptomsOccurrences);
 }

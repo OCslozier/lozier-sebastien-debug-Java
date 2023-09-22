@@ -38,22 +38,22 @@ public class AnalyticsCounter {
 
 	public List<String> getSymptoms() {
 
-		return reader.GetSymptoms();
+		return reader.getSymptoms();
 
 	}
 
 	/**
 	 * Compte les occurrences de chaque symptôme dans la liste donnée.
 	 *
-	 * @param symptoms La liste des symptômes à analyser.
+	 * @param symptomsList La liste des symptômes à analyser.
 	 * @return Retourne une Map associant chaque symptôme à son nombre
 	 *         d'occurrences.
 	 */
 
-	public Map<String, Integer> countOccurrences(List<String> symptoms) {
+	public Map<String, Integer> countOccurrences(List<String> symptomsList) {
 		Map<String, Integer> occurrences = new TreeMap<>();
 
-		for (String symptom : symptoms) {
+		for (String symptom : symptomsList) {
 			occurrences.put(symptom, occurrences.getOrDefault(symptom, 0) + 1);
 		}
 
@@ -63,11 +63,11 @@ public class AnalyticsCounter {
 	/**
 	 * Affiche les symptômes leurs occurrences dans la console.
 	 *
-	 * @param occurrences La Map des symptômes et de leurs occurrences à afficher.
+	 * @param symptomsOccurrences La Map des symptômes et de leurs occurrences à afficher.
 	 */
 
-	public void displayOccurrences(Map<String, Integer> occurrences) {
-		for (Map.Entry<String, Integer> entry : occurrences.entrySet()) {
+	public void displayOccurrences(Map<String, Integer> symptomsOccurrences) {
+		for (Map.Entry<String, Integer> entry : symptomsOccurrences.entrySet()) {
 			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 	}
@@ -76,12 +76,12 @@ public class AnalyticsCounter {
 	 * Écrit les symptômes et leurs occurrences en utilisant le redacteur de
 	 * symptômes writer.
 	 *
-	 * @param symptoms La Map des symptômes et de leurs occurrences à écrire.
+	 * @param symptomsOccurrences La Map des symptômes et de leurs occurrences à écrire.
 	 */
 
-	public void writeSymptoms(Map<String, Integer> symptoms) {
+	public void writeSymptoms(Map<String, Integer> symptomsOccurrences) {
 
-		writer.writeSymptoms(symptoms);
+		writer.writeSymptoms(symptomsOccurrences);
 
 	}
 }

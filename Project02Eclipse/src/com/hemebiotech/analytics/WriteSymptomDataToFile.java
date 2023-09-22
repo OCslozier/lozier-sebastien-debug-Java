@@ -28,9 +28,9 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 	}
 
 	@Override
-	public void writeSymptoms(Map<String, Integer> occurrences) {
+	public void writeSymptoms(Map<String, Integer> symptomsOccurrences) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(outpath))) {
-			for (Map.Entry<String, Integer> entry : occurrences.entrySet()) {
+			for (Map.Entry<String, Integer> entry : symptomsOccurrences.entrySet()) {
 				writer.write(entry.getKey() + ": " + entry.getValue());
 				writer.newLine();
 			}
